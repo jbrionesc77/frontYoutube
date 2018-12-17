@@ -3,22 +3,27 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">Primer Nombre</th>
-        <th scope="col">Segundo Nombre</th>
-        <th scope="col">Primer Apellido</th>
-        <th scope="col">Segundo Apellido</th>
-        <th scope="col">Teléfono</th>
-        <th scope="col">Dirección</th>
+        <th>Primer Nombre</th>
+        <th>Segundo Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let item of users">
+        <td>{{item.firstName}}</td>
+        <td>{{item.secondName}}</td>
+        <td>{{item.firstSurName}}</td>
+        <td>{{item.secondSurName}}</td>
+        <td>{{item.phone}}</td>
+        <td>{{item.address}}</td>
+        <td>
+          <img src="../../assets/edit.png" class="editIcon" (click)="edit(item)">
+          <img src="../../assets/delete.png" class="editIcon" (click)="delete(item)">
+        </td>
       </tr>
     </tbody>
   </table>
